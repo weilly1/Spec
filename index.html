@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Spec Sheet </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body { background-color: #f5f7fa; padding: 30px; font-family: 'Microsoft JhengHei', sans-serif; }
+        .container { max-width: 1000px; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        .section-title { border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-bottom: 20px; color: #0d6efd; font-weight: bold; margin-top: 30px;}
+        .btn-primary { padding: 12px 30px; font-size: 1.2rem; width: 100%; }
+        .form-label { font-weight: 500; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center mb-4">Project Spec Sheet</h2>
+        <div class="alert alert-warning" role="alert">
+            <i class="bi bi-info-circle"></i> <strong>使用說明：</strong> 
+            <br>1. 填寫規格後點擊下方按鈕。
+            <br>2. 瀏覽器會自動下載 PDF 檔案。
+            <br>3. 請手動將下載的 PDF 加入郵件附件中回寄 QT Team。
+        </div>
+
+        <form id="specForm">
+            
+            <h5 class="section-title">Project Info</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Model Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="model_name" required placeholder="Ex: Z790-Wifi">
+                    <div class="invalid-feedback">請填寫 Model Name</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">H/W 版本 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="hw_version" required placeholder="Ex: 1.01">
+                    <div class="invalid-feedback">請填寫 H/W Version</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Signature (RD) <span class="text-danger">*</span></label>
+                    <select class="form-select" id="signature" required>
+                        <option value="">請選擇...</option>
+                        <option>Hugo Lu</option>
+                        <option>Mars_Tseng</option>
+                        <option>Allen_Tsai</option>
+                        <option>Isaac_Lee</option>
+                    </select>
+                    <div class="invalid-feedback">請選擇 RD 簽名</div>
+                </div>
+            </div>
+
+            <h5 class="section-title">Power & Memory</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">CPU Support 瓦數</label>
+                    <input type="text" class="form-control" id="cpu_support" placeholder="Ex: 35W & 65W & 125W">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">AC Adapter</label>
+                    <input type="text" class="form-control" id="power_layout" placeholder="Ex: 65W & 90W">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Max. capacity of system memory</label>
+                    <select class="form-select" id="memory_layout">
+                        <option value="">請選擇...</option>
+                        <option>16GB</option>
+                        <option>32GB</option>
+                        <option>64GB</option>
+                        <option>128GB</option>
+                        <option>256GB</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Memory MAX Frequency</label>
+                    <select class="form-select" id="memory_freq">
+                        <option value="">請選擇...</option>
+                        <option>2666</option>
+                        <option>3200</option>
+                        <option>3600</option>
+                        <option>4800</option>
+                        <option>5200</option>
+                        <option>5600</option>
+                        <option>7200</option>
+                        <option>7600</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Modern Standby</label>
+                    <select class="form-select" id="modern_standby">
+                        <option value="">請選擇...</option><option>Yes</option><option>No</option>
+                    </select>
+                </div>
+                 <div class="col-md-6">
+                    <label class="form-label">XMP/EXPO Support</label>
+                    <select class="form-select" id="xmp_support">
+                        <option value="">請選擇...</option>
+                        <option>XMP & EXPO</option><option>XMP Only</option><option>EXPO Only</option>
+                    </select>
+                </div>
+            </div>
+
+            <h5 class="section-title">BIOS Info</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">BIOS RD <span class="text-danger">*</span></label>
+                    <select class="form-select" id="bios_rd" required>
+                        <option value="">請選擇...</option>
+                        <option>Arthur_Lee</option>
+                        <option>Bill_Wang</option>
+                        <option>Ian_Chen</option>
+                        <option>Ricky_Tsai</option>
+                        <option>Sheng-feng_Lin</option>
+                    </select>
+                    <div class="invalid-feedback">請選擇 BIOS RD</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">BIOS ROM Size</label>
+                    <select class="form-select" id="bios_size">
+                      <option value="">請選擇...</option>
+                      <option>16M</option>
+                      <option>32M</option>
+                      <option>64M</option>
+                    </select>   
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">BIOS ROM Voltage</label>
+                    <select class="form-select" id="bios_voltage">
+                      <option value="">請選擇...</option>
+                      <option>1.8V</option>
+                      <option>3.3V</option>
+                    </select>       
+                </div>
+                <div class="col-md-6">
+    <label class="form-label">USB BIOS Flashback Port <span class="text-danger">*</span></label>
+    
+    <div class="d-flex gap-2"> <select class="form-select" id="bios_flashback_select" required onchange="toggleFlashbackInput(this)">
+            <option value="" selected disabled>Select...</option>
+            <option value="Not Support">Not Support</option>
+            <option value="Support">Support</option>
+        </select>
+
+        <input type="text" 
+               class="form-control d-none" 
+               id="bios_flashback_text" 
+               placeholder="Port Name (Ex: USB3_1)">
+    </div>
+    
+    <div class="invalid-feedback">Please select status</div>
+</div>
+            </div>
+
+            <h5 class="section-title">Graphics</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">HDMI Port</label>
+                    <select class="form-select" id="hdmi_layout">
+                        <option value="">請選擇...</option>
+                        <option>HDMI 2.0</option>
+                        <option>HDMI 2.1</option>
+                        <option>HDMI 2.2</option>
+                        <option>N/A</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">DisplayPort</label>
+                    <select class="form-select" id="dp_layout">
+                        <option value="">請選擇...</option>
+                        <option>DP 1.2</option>
+                        <option>DP 1.4</option>
+                        <option>DP 2.0</option>
+                        <option>DP 2.1</option>
+                        <option>N/A</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Type-C Display</label>
+                    <select class="form-select" id="type_c_display">
+                        <option value="">請選擇...</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </div>
+
+            <h5 class="section-title">Other Features</h5>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">TPM</label>
+                    <select class="form-select" id="tpm_layout">
+                        <option value="">請選擇...</option>
+                        <option>fTPM</option>
+                        <option>Infineon</option>
+                        <option>Nuvoton</option>
+                        <option>Infineon & Nuvoton</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Case Open</label>
+                    <select class="form-select" id="case_open">
+                        <option value="">請選擇...</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">LED</label>
+                    <select class="form-select" id="rgb_led">
+                        <option value="">請選擇...</option>
+                        <option>RGB LED</option>
+                        <option>Addressable LED</option>
+                        <option>Not Suppport</option>
+                    </select>
+                </div>
+            </div>
+
+            <h5 class="section-title">M.2 Configuration</h5>
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr><th>Slot</th><th>Source</th><th>Interface</th><th>Speed</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>M.2_1</td>
+                        <td><select class="form-select form-select-sm" id="m2_1_source"><option value="">請選擇...</option><option>CPU</option><option>Chipset</option></select></td>
+                        <td><select class="form-select form-select-sm" id="m2_1_interface"><option value="">請選擇...</option><option>PCIe</option><option>PCIe & SATA</option><option>SATA</option></select></td>
+                        <td><select class="form-select form-select-sm" id="m2_1_speed"><option value="">請選擇...</option><option>6Gbps</option><option>Gen2 x4</option><option>Gen3 x2</option><option>Gen3 x4</option><option>Gen4 x4</option><option>Gen5 x4</option></select></td>
+                    </tr>
+                    <tr>
+                        <td>M.2_2</td>
+                        <td><select class="form-select form-select-sm" id="m2_2_source"><option value="">請選擇...</option><option>CPU</option><option>Chipset</option></select></td>
+                        <td><select class="form-select form-select-sm" id="m2_2_interface"><option value="">請選擇...</option><option>PCIe</option><option>PCIe & SATA</option><option>SATA</option></select></td>
+                        <td><select class="form-select form-select-sm" id="m2_2_speed"><option value="">請選擇...</option><option>6Gbps</option><option>Gen2 x4</option><option>Gen3 x2</option><option>Gen3 x4</option><option>Gen4 x4</option><option>Gen5 x4</option></select></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h5 class="section-title">USB</h5>
+            <div class="row g-3">
+                <div class="col-md-6"><label class="form-label">USB 5G <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="usb_5g" required placeholder="例: USB3_12,如不支援請寫N/A"></div>
+                <div class="col-md-6"><label class="form-label">USB 10G <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="usb_10g" required placeholder="例: USB3_56,如不支援請寫N/A"></div>
+                <div class="col-md-6"><label class="form-label">USB 20G <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="usb_20g" required placeholder="例: USB3_34,如不支援請寫N/A"></div>
+                <div class="col-md-6"><label class="form-label">USB 4 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="usb_4" required placeholder="例: USB4_1,如不支援請寫N/A"></div>
+                <div class="col-md-6"><label class="form-label">Thunderbolt <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="thunderbolt" required placeholder="例: TB_1,如不支援請寫N/A"></div>
+                <div class="col-md-6"><label class="form-label">Type-C PD Support <span class="text-danger">*</span></label>
+                    <select class="form-select" id="TC_PD" required>
+                        <option value="">請選擇...</option>
+                        <option>Support</option>
+                        <option>Not Support </option>                      
+                    </select>
+                </div>
+            </div>
+
+            <h5 class="section-title">LAN</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">On-Board LAN Speed</label>
+                    <select class="form-select" id="OnBoard_LAN">
+                        <option value="">請選擇...</option>
+                        <option>1G</option>
+                        <option>2.5G</option>
+                        <option>5G</option>
+                        <option>10G</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">DASH/vPro Support</label>
+                    <select class="form-select" id="DASH">
+                        <option value="">請選擇...</option>
+                        <option>Not Support</option>
+                        <option>DASH Support</option>
+                        <option>vPro Support</option>                                                                        
+                    </select>
+                </div>
+            </div>
+
+            <h5 class="section-title">Wi-Fi</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">WiFi Interface</label>
+                    <select class="form-select" id="wifi_interface">
+                        <option value="">請選擇...</option>
+                        <option>CNVi & PCIe</option>
+                        <option>CNVi</option>
+                        <option>PCIe</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">WiFi 7 Support</label>
+                    <select class="form-select" id="wifi7_support">
+                        <option value="">請選擇...</option>
+                        <option>Yes</option>
+                        <option>No</option>                        
+                    </select>
+                </div>
+              
+            </div>
+
+            <hr class="my-4">
+            <div class="text-end pb-5">
+                <button type="button" onclick="generatePDF()" class="btn btn-primary btn-lg">
+                    產生 PDF 並下載
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+    <script>
+        async function generatePDF() {
+            // 1. 抓取表單元素
+    const form = document.getElementById('specForm');
+
+    // 2. 關鍵邏輯：檢查是否符合規定 (checkValidity)
+    if (!form.checkValidity()) {
+        // 如果有欄位沒填：
+        // a. 加上 Bootstrap 的驗證樣式 (讓框框變紅)
+        form.classList.add('was-validated');
+        // b. 跳出提示
+        alert("請填寫所有必填欄位 (紅色框框處)");
+        // c. 直接結束函式，不讓它往下執行產生 PDF
+        return; 
+    }
+
+    // ... 驗證通過後，才會執行下面的 PDF 產生程式碼 ...
+   
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // 1. 取得資料 Helper Function
+            const getVal = (id) => {
+                const el = document.getElementById(id);
+                return el ? (el.value || "") : "";
+            };
+            
+            const modelName = getVal('model_name') || "Unknown";
+            const hwVer = getVal('hw_version') || "N/A";
+            const signature = getVal('signature') || "RD";
+            // --- 【修改這裡】處理 Flashback 的值 ---
+            const fbSelect = getVal('bios_flashback_select'); // 抓下拉選單的值
+            const fbText = getVal('bios_flashback_text');     // 抓輸入框的值
+    
+            // 如果選單是 Support，就用輸入的文字；否則就用 N/A
+            const finalFlashback = (fbSelect === 'Support') ? fbText : 'Not Support';
+            // -------------------------------------
+            // 設定時間格式
+            const dateStr = new Date().toLocaleString('zh-TW', {
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', hour12: false
+            });
+            
+            // 2. 製作 PDF 內容
+            doc.setFontSize(22);
+            doc.setTextColor(13, 110, 253);
+            doc.text("Project Spec Sheet", 105, 20, null, null, "center");
+            
+            // Meta Info
+            doc.setFontSize(10);
+            doc.setTextColor(0);
+            
+            doc.text(`Model Name: ${modelName}`, 14, 32);
+            doc.text(`H/W Ver:    ${hwVer}`, 120, 32);
+            doc.text(`Generated:  ${dateStr}`, 14, 38);
+            doc.text(`Signature:  ${signature}`, 14, 44);
+            
+            // M.2 字串
+            const m2_1_str = `${getVal('m2_1_source')} / ${getVal('m2_1_interface')} / ${getVal('m2_1_speed')}`.replace(/^\s*\/\s*\/\s*$/, "");
+            const m2_2_str = `${getVal('m2_2_source')} / ${getVal('m2_2_interface')} / ${getVal('m2_2_speed')}`.replace(/^\s*\/\s*\/\s*$/, "");
+
+            // 定義表格資料
+            const tableData = [
+                [{content: 'Power & Memory', colSpan: 2, styles: {fillColor: [220, 220, 220], fontStyle: 'bold'}}],
+                ['CPU Support', getVal('cpu_support')],
+                ['AC Adapter', getVal('power_layout')],
+                ['Memory MAX Size', getVal('memory_layout')],
+                ['Memory MAX Freq', getVal('memory_freq')],
+                ['Modern Standby', getVal('modern_standby')],
+                ['XMP Support', getVal('xmp_support')],
+
+                [{content: 'BIOS Info', colSpan: 2, styles: {fillColor: [220, 220, 220], fontStyle: 'bold'}}],
+                ['BIOS RD', getVal('bios_rd')],
+                ['ROM Size', getVal('bios_size')],
+                ['ROM Voltage', getVal('bios_voltage')],
+                ['USB BIOS Flashback', finalFlashback], // <--- 這裡改成新的變數名稱
+
+                [{content: 'Graphics', colSpan: 2, styles: {fillColor: [220, 220, 220], fontStyle: 'bold'}}],
+                ['HDMI', getVal('hdmi_layout')],
+                ['DisplayPort', getVal('dp_layout')],
+                ['Type-C Display', getVal('type_c_display')],
+
+                [{content: 'Other Features', colSpan: 2, styles: {fillColor: [220, 220, 220], fontStyle: 'bold'}}],
+                ['TPM', getVal('tpm_layout')],
+                ['Case Open', getVal('case_open')],
+                ['RGB LED', getVal('rgb_led')],
+
+                [{content: 'M.2 Storage (Source / Interface / Speed)', colSpan: 2, styles: {fillColor: [220, 220, 220], fontStyle: 'bold'}}],
+                ['M.2_1', m2_1_str],
+                ['M.2_2', m2_2_str],
+
+                [{content: 'Connectivity (USB)', colSpan: 2, styles: {fillColor: [220, 220, 220], fontStyle: 'bold'}}],
+                ['USB 5G', getVal('usb_5g')],
+                ['USB 10G', getVal('usb_10g')],
+                ['USB 20G', getVal('usb_20g')],
+                ['USB 4', getVal('usb_4')],
+                ['Thunderbolt', getVal('thunderbolt')],
+                ['Type-C PD Support', getVal('TC_PD')],
+
+                [{content: 'Connectivity (LAN & WiFi)', colSpan: 2, styles: {fillColor: [220, 220, 220], fontStyle: 'bold'}}],
+                ['On-Board LAN Speed', getVal('OnBoard_LAN')],
+                ['DASH/vPro', getVal('DASH')],
+                ['WiFi Interface', getVal('wifi_interface')],
+                ['WiFi 7 Support', getVal('wifi7_support')],
+                //['WiFi Module', getVal('wifi_module')],
+            ];
+
+            // 4. 繪製表格
+            doc.autoTable({
+                startY: 52,
+                head: [['Item', 'Spec / Value']],
+                body: tableData,
+                theme: 'grid',
+                headStyles: { fillColor: [13, 110, 253] },
+                styles: { fontSize: 10, cellPadding: 3, overflow: 'linebreak' },
+                columnStyles: { 0: { cellWidth: 50 }, 1: { cellWidth: 'auto' } }
+            });
+
+            // 5. 下載 PDF
+          // 5. 下載 PDF
+            const now = new Date();
+            const dateTime =
+              now.getFullYear().toString() +
+              String(now.getMonth() + 1).padStart(2, '0') +
+              String(now.getDate()).padStart(2, '0') + '_' +
+              String(now.getHours()).padStart(2, '0') +
+              String(now.getMinutes()).padStart(2, '0');
+
+            // --- 檔名處理邏輯 ---
+            // A. 將 Model Name 中的非法字元換成底線
+            const safeModelName = modelName.replace(/[\\/:*?"<>|]/g, "_");
+            
+            // B. 將 H/W Version 中的非法字元換成底線 (這裡直接使用最上面宣告的 hwVer)
+            // 例如 hwVer 是 "N/A" 會變成 "N_A"，如果是 "1.01" 則不變
+            const safeHwVer = hwVer.replace(/[\\/:*?"<>|]/g, "_");
+
+            // C. 組合最終檔名：型號_版本_Spec_時間.pdf
+            const fileName = `${safeModelName}_${safeHwVer}_Spec_${dateTime}.pdf`;
+            
+            doc.save(fileName);
+        }
+        // 控制 Flashback 輸入框顯示/隱藏的函式
+        function toggleFlashbackInput(selectElement) {
+            const input = document.getElementById('bios_flashback_text');
+    
+        if (selectElement.value === 'Support') {
+        // 如果選擇 Support：顯示輸入框，並設為必填
+        input.classList.remove('d-none');
+        input.setAttribute('required', '');
+        input.focus(); // 自動聚焦方便輸入
+    } else {
+        // 如果選擇 N/A：隱藏輸入框，移除必填，並清空內容
+        input.classList.add('d-none');
+        input.removeAttribute('required');
+        input.value = ''; 
+    }
+}
+    </script>
+   
+</body>
+</html>
